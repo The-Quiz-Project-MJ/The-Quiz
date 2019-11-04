@@ -14,3 +14,29 @@ function objCreator(array) {
 	return arrayOfObjects;
 }
 
+var questions = objCreator(arrayOfCountries);
+function questionGenerator(){
+	return Math.floor(Math.random() * questions.length)	
+}
+
+
+function nextQuestion(questionNumber){
+	questions.splice(questionNumber, 1)
+}
+
+$(document).ready(function(){
+	var questionNumber = questionGenerator()
+	console.log(questionNumber)
+	var count = 0;
+	$('button').on('click', function(){
+	var id = $(':checked')[0].id
+	console.log(document.getElementsByClassName(id)[0].innerText)
+
+	/*if(document.getElementsByClassName(id)[0].innerText === answer){
+		count++
+	}*/
+
+	nextQuestion(questionNumber)
+	questionGenerator()
+})	
+})
