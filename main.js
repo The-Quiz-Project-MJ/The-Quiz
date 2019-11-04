@@ -1,16 +1,17 @@
-var arrayOfCountries = ["Argentina","Angola","Brazil","Belgium","Canada","Mexico","Madagascar","Niger","Australia",""]
+var arrayOfCountries = ["Argentina","Angola","Brazil","Belgium","Canada","Mexico","Madagascar","Niger","Australia", "Tunisia","Spain","Oman","Libya","Jamaica","Ghana" ,"Cuba","Peru","Croatia","North-Korea","Estonia"]
 
 function objCreator(array) {
 	var obj = {};
 	var arrayOfObjects = [];
 	for (var i = 0; i < array.length; i++) {
-		obj.name = array[i];
-		obj.url = function() {
+		arrayOfObjects.push({
+			name : array[i],
+			url : function() {
 			return "https://www.countries-ofthe-world.com/flags-normal/flag-of-" + this.name + ".png"
-		}
-
-		arrayOfObjects.push(obj);
-	}
+		    }
+		});
+	
+}
 	return arrayOfObjects;
 }
 
@@ -26,9 +27,14 @@ function nextQuestion(questionNumber){
 
 $(document).ready(function(){
 	var questionNumber = questionGenerator()
-	console.log(questionNumber)
+	var src = questions[questionNumber].url() 
+	$('#question img').attr('src',src)
 	var count = 0;
 	$('button').on('click', function(){
+		nextQuestion(questionNumber)
+		questionNumber = questionGenerator()
+		src = questions[questionNumber].url() 
+		$('#question img').attr('src',src)
 	var id = $(':checked')[0].id
 	console.log(document.getElementsByClassName(id)[0].innerText)
 
@@ -36,7 +42,5 @@ $(document).ready(function(){
 		count++
 	}*/
 
-	nextQuestion(questionNumber)
-	questionGenerator()
 })	
 })
