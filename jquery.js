@@ -7,5 +7,6 @@ $(document).ready(function(){
 	/*if(document.getElementsByClassName(id)[0].innerText === answer){
 		count++
 	}*/
+	
 })	
 })
