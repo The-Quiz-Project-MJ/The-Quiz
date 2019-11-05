@@ -63,7 +63,7 @@ function outputMesaage(result) {
 	} else if(percentage < 20) {
 		return "You Suck You only made "+ percentage + " %"
 	} else {
-
+		return "You "
 	}
 }
 
@@ -85,7 +85,7 @@ var percentage = "";
 $('#start').on('click', function(){
 	$('.question').show()
 	$('#answers').show()
-	//$('img').show();
+	$('img').show();
 	$('#start').hide()
 	questionNumber = randomNumberGenerator(questions)
 	src = questions[questionNumber].url() 
@@ -98,15 +98,16 @@ $('#next').on('click', function(){
 	if(document.getElementsByClassName(id)[0].innerText === questions[questionNumber].name){
 		++result
 	}
-	if(a === 5){
+	if(a === 4){
 		//console.log('aaaaaaaaaaaaaa')
 		//alert('Your final score is : ' + result)
-		percentage = result*5  
+		percentage = result*25  
 		
 		var newStr = 'Your result is : ' + percentage + " %"
 		//alert('Your score ' + newStr)
 		//$('section #question').hide()
-		$('section #question').text(newStr)
+		$('#answers').hide();
+		$('#question').html(newStr)
 	     
 	}
 	++a
@@ -121,3 +122,48 @@ $('#next').on('click', function(){
 
 $(document).ready(hide())	
 
+var id = 1
+	$('.clicked').on('click', function(){
+		var id = '#' + this.getAttribute("id")[3]
+		$(id)[0].checked = true
+	})
+
+
+	$('#start').on('click', function(){
+		$('.question').show()
+		$('#answers').show()
+		$('img').show()
+		$('#start').hide()
+		questionNumber = randomNumberGenerator(questions)
+		src = questions[questionNumber].url() 
+		$('#question img').attr('src',src)
+		displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
+	})
+
+
+
+	$('#next').on('click', function(){
+		id = $(':checked')[0].id
+		if(document.getElementsByClassName(id)[0].innerText === questions[questionNumber].name){
+			++result
+		}
+		if(a === 19){
+			console.log('aaaaaaaaaaaaaa')
+			alert('Your final score is : ' + result)
+		}
+		++a
+		console.log(a, result)
+		$(':checked')[0].checked = false;
+		nextQuestion(questionNumber)
+		questionNumber = randomNumberGenerator(questions)
+		src = questions[questionNumber].url() 
+		$('#question img').attr('src',src)
+		displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
+	});
+
+$(document).ready(function(){
+	$('.question').hide()
+	$('#answers').hide()
+	$('img').hide()
+
+})	

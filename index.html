@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<title>The MJ Quiz</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script
@@ -12,19 +13,23 @@
 </head>
 <body>
 	<main>
+		<h1>The MJ Flags Quiz</h1>
 		<section id="question">
 			<button id="start">Start The Game</button>
-			<h2 class="question">To which country belongs this flag?</h2>
+			<h2 class="question"><span>Q1 :</span> To which country belongs this flag?</h2>
 			<img src="">
 		</section>
 		<section id="answers">
-			<div>
-				<input type="radio" name="a" id="1"><label class="1">set 1</label> 
-				<input type="radio" name="a" id="2"> <label class="2">set 2</label> 
-				<input type="radio" name="a" id="3"> <label class="3">set 3</label> 
-				<input type="radio" name="a" id="4"> <label class="4">set 4</label> 
-				<input type="radio" name="a" id="5"> <label class="5">set 5</label> 
-				<input type="radio" name="a" id="6"> <label class="6">set 6</label>
+			<div class="answers">
+				<button class="clicked" id="btn1"><input type="radio" name="a" id="1"><label class="1">set 1</label></button>
+				<button class="clicked" id="btn2"><input type="radio" name="a" id="2"> <label class="2">set 2</label></button>
+				<button class="clicked" id="btn3"><input type="radio" name="a" id="3"> <label class="3">set 3</label></button>
+				<button class="clicked" id="btn4"><input type="radio" name="a" id="4"> <label class="4">set 4</label></button> 
+				<button class="clicked" id="btn5"><input type="radio" name="a" id="5"> <label class="5">set 5</label></button> 
+				<button class="clicked" id="btn6"><input type="radio" name="a" id="6"> <label class="6">set 6</label></button>
+			</div>
+			<div class="next">
+				<button id="next">Next</button>
 			</div>
 			<button id="next">Send</button>
 			
