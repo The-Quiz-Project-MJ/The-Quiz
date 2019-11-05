@@ -61,6 +61,7 @@ var id = 1
 	$('#start').on('click', function(){
 		$('.question').show()
 		$('#answers').show()
+		$('img').show()
 		$('#start').hide()
 		questionNumber = randomNumberGenerator(questions)
 		src = questions[questionNumber].url() 
@@ -92,4 +93,6 @@ var id = 1
 $(document).ready(function(){
 	$('.question').hide()
 	$('#answers').hide()
+	$('img').hide()
+
 })	
