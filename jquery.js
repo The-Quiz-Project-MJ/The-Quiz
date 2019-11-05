@@ -6,8 +6,8 @@
 	console.log(document.getElementsByClassName(id)[0].innerText)
 	/*if(document.getElementsByClassName(id)[0].innerText === answer){
 		count++
-	}
-})	
-})*/
+<<<<<<< HEAD
+	}*/
+	
 
 

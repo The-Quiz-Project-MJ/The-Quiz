@@ -1,0 +1,7 @@
+body {
+	/*Gradient: Endless River from https://uigradients.com/#EndlessRiver */	
+  background: #43cea2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #43cea2, #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #43cea2, #185a9d);
+
+}
