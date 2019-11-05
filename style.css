@@ -1,0 +1,57 @@
+*{
+	margin : 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+    /*Gradient: Endless River from https://uigradients.com/#EndlessRiver */    
+ 	background: #43cea2; /* fallback for old browsers */
+ 	background: -webkit-linear-gradient(to right, #43cea2, #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+ 	background: linear-gradient(to right, #43cea2, #185a9d);
+}
+main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 1px black;
+}
+
+#question {
+	height: 60%;
+	width: 80%;
+	border: solid 1px black; 
+}
+
+#answers {
+	display: flex;
+	align-items: center;
+	height: 20%;
+	width: 80%;
+	border: solid 1px black;
+}
+
+.answers {
+	width: 70%;
+	height: 100%;
+	border: solid 1px red;
+	text-align: center;
+}
+
+#next {
+	width: 30%;
+	height: 100%;
+	align-self: flex-end;
+}
+
+.clicked {
+	/*Gradient: Endless River from https://uigradients.com/#EndlessRiver */    
+ 	/*background: #43cea2; /* fallback for old browsers */
+ 	/*background: -webkit-linear-gradient(to right, #43cea2, #185a9d);*/ /* Chrome 10-25, Safari 5.1-6 */
+ 	/*background: linear-gradient(to right, #43cea2, #185a9d);*/
+ 	background: inherit;
+ 	border: none;
+}

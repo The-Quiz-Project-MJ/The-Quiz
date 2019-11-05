@@ -52,6 +52,12 @@ var questionNumber = randomNumberGenerator(questions)
 var a = 0;
 var result = 0;
 var id = 1
+	$('.clicked').on('click', function(){
+		var id = '#' + this.getAttribute("id")[3]
+		$(id)[0].checked = true
+	})
+
+
 	$('#start').on('click', function(){
 		$('.question').show()
 		$('#answers').show()
@@ -61,6 +67,9 @@ var id = 1
 		$('#question img').attr('src',src)
 		displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
 	})
+
+
+
 	$('#next').on('click', function(){
 		id = $(':checked')[0].id
 		if(document.getElementsByClassName(id)[0].innerText === questions[questionNumber].name){
