@@ -15,7 +15,24 @@
 	<main>
 		<h1>The MJ Flags Quiz</h1>
 		<section id="question">
-			<button id="start">Start The Game</button>
+			<div class="userName">
+				<div id="numbers">
+					<label>Choose how many questions you want to answer</label>
+					<select id="dropdown" name="Numbers">
+						<option value="5">5</option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+					</select>
+				</div>
+				<div id="name">
+					<label>Enter Your name</label>
+					<textarea placeholder="Enter your name" id="userName"></textarea>	
+				</div>
+			</div>
+			<div id="btn">	
+				<button id="start">Start The Game</button>
+			</div>
 			<h2 class="question"><span>Q1 :</span> To which country belongs this flag?</h2>
 			<img src="">
 		</section>

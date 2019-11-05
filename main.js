@@ -12,8 +12,13 @@ function objCreator(array) {
 	}
 	return arrayOfObjects;
 }
-
 var questions = objCreator(arrayOfCountries);
+
+function hide(){
+	$('.question').hide()
+	$('#answers').hide()
+	$('img').hide()
+}
 function randomNumberGenerator(array){
 	return Math.floor(Math.random() * array.length)	
 }
@@ -47,52 +52,89 @@ function displayAnswers(array){
 		i++
 	}
 }
+function outputMsg(res){
+	var percentage = (result * 100)/maxQuestion;
+	var msg = ""
+	if(percentage < 10){
+		return "You're a flag 'Ignorant' " + userName + ", you only made " + percentage + "%"
+	}else if(percentage < 30){
+		return "You really don't know your flags "  + userName + ", you only made " + percentage + "%"
+	}else if(percentage < 50){
+		return "Meh!!, " + userName + " you only made " + percentage + "%"
+	}else if(percentage < 60){
+		return "You're OK " + userName + ", you made " + percentage + "%"
+	}else if(percentage < 80){
+		return "You're Fine " + userName + ", you mad " + percentage + "%"
+	}else if(percentage < 100){
+		return "You're good " + userName + ", you made " + percentage + "%"
+	}
+	return "You're a genius " + userName + ", you made " + percentage + "%"
+}
+function verifyAnswer(current, right){
+
+}
 
 var questionNumber = randomNumberGenerator(questions)
-var a = 0;
+var limit = 0;//number of the current question
 var result = 0;
 var id = 1
-	$('.clicked').on('click', function(){
-		var id = '#' + this.getAttribute("id")[3]
-		$(id)[0].checked = true
-	})
+var userName = "";
+var src = "";
+var maxQuestion = "";
 
 
-	$('#start').on('click', function(){
-		$('.question').show()
-		$('#answers').show()
-		$('img').show()
-		$('#start').hide()
-		questionNumber = randomNumberGenerator(questions)
-		src = questions[questionNumber].url() 
-		$('#question img').attr('src',src)
-		displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
-	})
+$('.clicked').on('click', function(){
+	var id = '#' + this.getAttribute("id")[3]
+	$(id)[0].checked = true
+})
 
 
+$('#start').on('click', function(){
+	userName = $('#userName').val();
+	maxQuestion = $('#dropdown').val();
+	$('.question').show()
+	$('#answers').show()
+	$('img').show()
+	$('.userName').hide()
+	$('#btn').hide()
+	$('#start').hide()
+	questionNumber = randomNumberGenerator(questions)
+	src = questions[questionNumber].url() 
+	$('#question img').attr('src',src)
+	displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
+})
 
-	$('#next').on('click', function(){
-		id = $(':checked')[0].id
-		if(document.getElementsByClassName(id)[0].innerText === questions[questionNumber].name){
-			++result
-		}
-		if(a === 19){
-			console.log('aaaaaaaaaaaaaa')
-			alert('Your final score is : ' + result)
-		}
-		++a
-		console.log(a, result)
-		$(':checked')[0].checked = false;
-		nextQuestion(questionNumber)
-		questionNumber = randomNumberGenerator(questions)
-		src = questions[questionNumber].url() 
-		$('#question img').attr('src',src)
-		displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
+$('#next').on('click', function(){
+	if($(':checked')[1] === undefined){
+		alert('You need to choose an answer')
+	}
+	id = $(':checked')[1].id
+	if(document.getElementsByClassName(id)[0].innerText === questions[questionNumber].name){
+		++result
+	}else {
+		$('#btn' + id).css('background-color','#a43931')
+	}
+	$('#btn' + id).css('background-color','inherit')
+	if(limit === maxQuestion - 2){
+	$('#next').text('Show Result')
+	}
+	if(limit === maxQuestion - 1){
+		finalScore()
+		return 1;
+	}
+	++limit
+	console.log(limit, result)
+	$(':checked')[1].checked = false;
+	nextQuestion(questionNumber)
+	questionNumber = randomNumberGenerator(questions)
+	$('span').html('Q' + (limit + 1) + ' :')
+	src = questions[questionNumber].url() 
+	$('#question img').attr('src',src)
+	displayAnswers(generateAnswers(arrayOfCountries,arrayOfCountries.indexOf(questions[questionNumber].name)))
 	});
 
-$(document).ready(function(){
-	$('.question').hide()
+function finalScore(){
 	$('#answers').hide()
-	$('img').hide()
-
-})	
+	$('#question').html('<p id="result">' + outputMsg(result) + '</p>')
+} 
+$(document).ready(hide())	
