@@ -2,8 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<title>The MJ Quiz</title>
-	<style type="text/css" href="style.css"></style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -12,20 +13,42 @@
 </head>
 <body>
 	<main>
-		<section id="question"></section>
-			<h2 class="question">To which country belongs this flag?</h2>
-			<img src="">
-
-		<section id="answers">
-			<div>
-				<input type="radio" name="a" id="1"><label class="1">set 1</label> 
-				<input type="radio" name="a" id="2"> <label class="2">set 2</label> 
-				<input type="radio" name="a" id="3"> <label class="3">set 3</label> 
-				<input type="radio" name="a" id="4"> <label class="4">set 4</label> 
-				<input type="radio" name="a" id="5"> <label class="5">set 5</label> 
-				<input type="radio" name="a" id="6"> <label class="6">set 6</label>
+		<h1>The MJ Flags Quiz</h1>
+		<section id="question">
+			<div class="userName">
+				<div id="numbers">
+					<label>Choose how many questions you want to answer</label>
+					<select id="dropdown" name="Numbers">
+						<option value="5">5</option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+					</select>
+				</div>
+				<div id="name">
+					<label>Enter Your name</label>
+					<textarea placeholder="Enter your name" id="userName"></textarea>	
+				</div>
 			</div>
-			<button>Send</button>
+			<div id="btn">	
+				<button id="start">Start The Game</button>
+			</div>
+			<h2 class="question"><span>Q1 :</span> To which country belongs this flag?</h2>
+			<img src="">
+		</section>
+		<section id="answers">
+			<div class="answers">
+				<button class="clicked" id="btn1"><input type="radio" name="a" id="1"><label class="1">set 1</label></button>
+				<button class="clicked" id="btn2"><input type="radio" name="a" id="2"> <label class="2">set 2</label></button>
+				<button class="clicked" id="btn3"><input type="radio" name="a" id="3"> <label class="3">set 3</label></button>
+				<button class="clicked" id="btn4"><input type="radio" name="a" id="4"> <label class="4">set 4</label></button> 
+				<button class="clicked" id="btn5"><input type="radio" name="a" id="5"> <label class="5">set 5</label></button> 
+				<button class="clicked" id="btn6"><input type="radio" name="a" id="6"> <label class="6">set 6</label></button>
+			</div>
+			<div class="next">
+				<button id="next">Next</button>
+				<button id="playAgain">Play Again</button>
+			</div>
 		</section>
 	</main>
 

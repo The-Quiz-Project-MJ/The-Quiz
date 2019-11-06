@@ -1,0 +1,194 @@
+*{
+	margin : 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	font-size: 30px;
+    /*Gradient: Endless River from https://uigradients.com/#EndlessRiver */    
+ 	background: radial-gradient(#43cea2 30%, #185a9d);
+}
+main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 1px black;
+}
+
+#question {
+	position: relative;
+	height: 60%;
+	width: 70%;
+	border: solid 2px black; 
+	box-shadow: 3px -3px 10px black;
+	box-shadow: black;
+	display: flex;
+	flex-direction: column;
+}
+img{
+	height: 40%;
+	width: 30%;
+	margin: 30px auto auto auto;
+}
+#question h2{
+	height: 20%;
+	margin: 15px auto 30px auto;
+}
+#answers {
+	display: flex;
+	align-items: center;
+	height: 20%;
+	width: 70%;
+	margin-top: 15px;
+}
+
+.answers {
+	width: 70%;
+	height: 100%;
+	display: grid;
+	grid-template-areas: "a b c"
+						 "d e f";
+}
+#btn1 {
+	grid-area: a;
+}
+#btn2 {
+	grid-area: b;
+}
+#btn3 {
+	grid-area: c;
+}
+#btn4 {
+	grid-area: d;
+}
+#btn5 {
+	grid-area: e;
+}
+#btn6 {
+	grid-area: f;
+}
+#next{
+	position: absolute;
+	top: 15%;
+	left: 35%;
+	background: #114357;
+ 	border: none;
+	width: 60%;
+	height: 70%;
+	font-size: 40px;
+	color: white;
+	margin: auto;
+}
+
+#playAgain{
+	position: absolute;
+	top: 15%;
+	left: 275%;
+	background: #114357;
+ 	border: none;
+	width: 60%;
+	height: 70%;
+	font-size: 40px;
+	color: white;
+	margin: auto;
+}
+.next{
+	position: relative;
+	width: 30%;
+	height: 100%;
+}
+.clicked {
+ 	background: inherit;
+ 	border: none;
+ 	text-decoration: none;
+ 	text-align: center;
+
+}
+label {
+	font-size: 32px;
+}
+input {
+	display: none;
+}
+#btn{
+	position: relative;
+	height: 40%;
+	width: 100%;
+}
+#start{
+	position: absolute;
+	top: 5%;
+	left: 40%;
+	margin: auto;
+	height: 30%;
+	width: 25%;
+	font-size: 35px;
+	background-color: #3a6186;
+	color: white;
+}
+.userName{
+	height: 60%;
+	width: 70%;
+	margin: auto;
+}
+#name{
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+#name label,#numbers label{
+	font-size: 35px;
+}
+textarea{
+	min-width: 40%;
+	height: 20%;
+	text-align: center;
+	margin-left: 10px;
+	font-size: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	top: 1px;
+	background: inherit;
+	border-color: #3a6186;
+}
+select{
+	width: 45px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 10px;
+	font-size: 20px;
+	background: inherit;
+	border-color: #185a9d;
+	text-align: center;
+	padding-bottom: 3px;
+}
+#numbers{
+	margin-top: 10px;
+}
+#result{
+	font-size: 60px;
+	width: 80%;
+	text-align: center;
+	margin:auto;
+}
+h1 {
+	margin: 10px auto 20px auto;
+	font-size: 70px;
+}
+.clicked:hover{
+	background: #5691c8;
+}
+.clicked:active{
+	background: #5691c8;
+}
+.clicked:focus{
+	background: #5691c8;
+}
