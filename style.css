@@ -37,7 +37,7 @@ img{
 }
 #question h2{
 	height: 20%;
-	margin: 15px auto 30px 25px;
+	margin: 15px auto 30px auto;
 }
 #answers {
 	display: flex;
@@ -163,11 +163,15 @@ select{
 	width: 45px;
 	height: 30px;
 	margin-left: 10px;
+	margin-top: 10px;
 	font-size: 20px;
 	background: inherit;
 	border-color: #185a9d;
 	text-align: center;
 	padding-bottom: 3px;
+}
+#numbers{
+	margin-top: 10px;
 }
 #result{
 	font-size: 60px;
